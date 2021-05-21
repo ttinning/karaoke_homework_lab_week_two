@@ -5,13 +5,13 @@ from src.guest import Guest
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.guest_1 = Guest("Tristan")
+        self.guest_1 = Guest("Tristan", 50)
         self.song_1 = Song("Rex Orange County, New House")
         self.room_1 = Room("Room 1", [self.guest_1.name], [self.song_1.song_name])
         self.song_2 = Song("Everything Everything, Breadwinner")
-        self.guest_2 = Guest("John")
+        self.guest_2 = Guest("John",10)
         self.room_2 = Room("Room 2", [], [])
-        self.guest_3 = Guest("Jack")
+        self.guest_3 = Guest("Jack", 100)
 
     def test_room_1_has_name(self):
         expected = "Room 1"

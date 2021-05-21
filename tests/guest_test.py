@@ -3,8 +3,8 @@ from src.guest import Guest
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
-        self.guest_1 = Guest("Tristan")
-        self.guest_2 = Guest("Clayre")
+        self.guest_1 = Guest("Tristan", 50)
+        self.guest_2 = Guest("Clayre", 200)
 
     def test_guest_1_has_name(self):
         expected = "Tristan"
@@ -15,3 +15,8 @@ class TestGuest(unittest.TestCase):
         expected = "Clayre"
         actual = self.guest_2.name
         self.assertEqual(expected, actual)
+
+    def test_guest_1_has_money(self):
+        expected = 50
+        actual = self.guest_1.wallet
+        self.assertEqual(expected,actual)
