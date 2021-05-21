@@ -1,7 +1,7 @@
 class Room:
-    def __init__(self, name, guest_list, song_list):
-        self.name = name
-        self.guest_list = guest_list
+    def __init__(self, room_name, room_list, song_list):
+        self.room_name = room_name
+        self.room_list = room_list
         self.song_list = song_list
         
     def add_song(self, song):
@@ -9,9 +9,9 @@ class Room:
         return self.song_list
 
     def add_person_to_room(self, guest):
-        self.guest_list.append(guest)
-        return self.guest_list
+        self.room_list.append(guest)
+        return self.room_list
 
     def remove_person_from_room(self, guest):
-        self.guest_list.remove(guest)
-        return self.guest_list
+        self.room_list.remove(guest)
+        return self.room_list
