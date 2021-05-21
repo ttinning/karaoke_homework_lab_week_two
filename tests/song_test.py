@@ -10,3 +10,8 @@ class TestSong(unittest.TestCase):
         expected = "Rex Orange County"
         actual = self.song_1.artist_name
         self.assertEqual(expected, actual)
+    
+    def test_song_1_has_song_name(self):
+        expected = "New House"
+        actual = self.song_1.song_name
+        self.assertEqual(expected, actual)
