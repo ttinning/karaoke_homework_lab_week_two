@@ -25,3 +25,8 @@ class TestGuest(unittest.TestCase):
         expected = 200
         actual = self.guest_2.wallet
         self.assertEqual(expected, actual)
+
+    def test_remove_cash_from_guest_1_wallet(self):
+        expected = 40
+        actual = self.guest_1.remove_cash(10)
+        self.assertEqual(expected, actual)
