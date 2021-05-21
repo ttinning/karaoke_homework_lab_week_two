@@ -20,3 +20,8 @@ class TestGuest(unittest.TestCase):
         expected = 50
         actual = self.guest_1.wallet
         self.assertEqual(expected,actual)
+
+    def test_guest_2_has_money(self):
+        expected = 200
+        actual = self.guest_2.wallet
+        self.assertEqual(expected, actual)
