@@ -10,7 +10,7 @@ class TestRoom(unittest.TestCase):
         self.room_1 = Room("Room 1", [self.guest_1.name], [self.song_1.song_name])
         self.song_2 = Song("Everything Everything, Breadwinner")
         self.guest_2 = Guest("John")
-    
+        self.room_2 = Room("Room 2", [], [])
 
     def test_room_1_has_name(self):
         expected = "Room 1"
@@ -35,3 +35,17 @@ class TestRoom(unittest.TestCase):
     def test_room_1_can_add_guest_2_to_guest_list(self):
         expected = ["Tristan", "John"]
         actual = self.room_1.add_person_to_room(self.guest_2.name)
+        self.assertEqual(expected, actual)
+
+    def test_room_1_can_remove_guest(self):
+        expected = []
+        actual = self.room_1.remove_person_from_room(self.guest_1.name)
+        self.assertEqual(expected, actual)
+
+    def test_can_add_multiple_people_to_room(self):
+        self.guest_3 = Guest("Jack")
+        self.room_2.add_person_to_room(self.guest_2.name)
+        self.room_2.add_person_to_room(self.guest_3.name)
+        expected = ["John", "Jack"]
+        actual = self.room_2.guest_list
+        self.assertEqual(expected, actual)

@@ -11,3 +11,7 @@ class Room:
     def add_person_to_room(self, guest):
         self.guest_list.append(guest)
         return self.guest_list
+
+    def remove_person_from_room(self, guest):
+        self.guest_list.remove(guest)
+        return self.guest_list
