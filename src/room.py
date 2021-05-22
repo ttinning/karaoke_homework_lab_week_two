@@ -10,8 +10,10 @@ class Room:
         return self.song_list
 
     def add_person_to_room(self, guest):
-        self.room_list.append(guest)
-        return self.room_list
+        if len(self.room_list) < self.room_capacity:
+            self.room_list.append(guest)    
+            return self.room_list
+        
 
     def remove_person_from_room(self, guest):
         self.room_list.remove(guest)
