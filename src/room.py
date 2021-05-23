@@ -4,6 +4,7 @@ class Room:
         self.room_list = room_list
         self.song_list = song_list
         self.room_capacity = room_capacity
+        self.room_till = 100
         
     def add_song(self, song):
         self.song_list.append(song)
@@ -18,3 +19,7 @@ class Room:
     def remove_person_from_room(self, guest):
         self.room_list.remove(guest)
         return self.room_list
+
+    def add_money_to_till(self, amount):
+        self.room_till += amount
+        return self.room_till

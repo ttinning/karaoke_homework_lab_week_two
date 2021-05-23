@@ -68,3 +68,7 @@ class TestRoom(unittest.TestCase):
         actual = self.room_3.room_list
         self.assertEqual(expected, actual)
 
+    def test_room_1_can_add_money_to_update_till_total(self):
+        expected = 120
+        actual = self.room_1.add_money_to_till(20)
+        self.assertEqual(expected, actual)
