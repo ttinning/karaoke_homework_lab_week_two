@@ -23,3 +23,7 @@ class Room:
     def add_money_to_till(self, amount):
         self.room_till += amount
         return self.room_till
+
+    def make_transaction(self, guest, price):
+        guest.remove_cash(price)
+        self.add_money_to_till(price)

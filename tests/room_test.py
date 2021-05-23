@@ -1,3 +1,4 @@
+from tests import guest_test
 import unittest
 from src.room import Room
 from src.song import Song
@@ -72,3 +73,13 @@ class TestRoom(unittest.TestCase):
         expected = 120
         actual = self.room_1.add_money_to_till(20)
         self.assertEqual(expected, actual)
+
+    def test_room_1_can_make_transaction_from_guest_1_and_update_till(self):
+        self.room_1.make_transaction(self.guest_1, 20)
+        guest_expected = 30
+        guest_actual = self.guest_1.wallet
+        room_till_expected = 120
+        room_till_actual = self.room_1.room_till
+        self.assertEqual(guest_expected, guest_actual)
+        self.assertEqual(room_till_expected, room_till_actual)
+
